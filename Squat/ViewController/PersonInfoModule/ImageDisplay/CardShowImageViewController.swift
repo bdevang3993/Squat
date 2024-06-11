@@ -16,16 +16,23 @@ class CardShowImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if isFromDelete {
-            imgDisplay.isHidden = true
-            MBProgressHub.showLoadingSpinner(sender: self.view)
-            self.destroyPersistentStore()
-            isFromDelete = false
+        if isFromSideMenu {
+            if isFromDelete {
+                imgDisplay.isHidden = true
+                MBProgressHub.showLoadingSpinner(sender: self.view)
+                self.destroyPersistentStore()
+                isFromDelete = false
+            } else {
+                self.restoreFromStore(backupName: kDatabaseName)
+            }
+           
         } else {
             objCardShowImageViewModel.setHeaderView(headerView: viewHeader)
             imgDisplay.image = selectedImage
         }
     }
+    
+    
     func destroyPersistentStore() {
         let storeFolderUrl = FileManager.default.urls(for: .applicationSupportDirectory, in:.userDomainMask).first!
         let storeUrl = storeFolderUrl.appendingPathComponent("\(kDatabaseName).sqlite")
@@ -66,9 +73,34 @@ class CardShowImageViewController: UIViewController {
     func removeImageWithFolder() {
         DocumentDirectoryAccess.objShared.deleteDirectory()
         MBProgressHub.dismissLoadingSpinner(self.view)
+        let userDefault = UserDefaults.standard
+        userDefault.removeObject(forKey: kEmailId)
+        userDefault.removeObject(forKey: kPassword)
+        userDefault.removeObject(forKey: kNumber)
+        userDefault.synchronize()
         self.moveToMainPage()
     }
     
+    
+    func restoreFromStore(backupName: String){
+        let storeFolderUrl = FileManager.default.urls(for: .applicationSupportDirectory, in:.userDomainMask).first!
+        let storeUrl = storeFolderUrl.appendingPathComponent("\(backupName).sqlite")
+        let backUpFolderUrl = FileManager.default.urls(for: .documentDirectory, in:.userDomainMask).first!
+        let backupUrl = backUpFolderUrl.appendingPathComponent(backupName + ".sqlite")
+        
+        let container = NSPersistentContainer(name: kPersistanceStorageName)
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            let stores = container.persistentStoreCoordinator.persistentStores
+            for _ in stores {
+            }
+            do{
+                try container.persistentStoreCoordinator.replacePersistentStore(at: storeUrl,destinationOptions: nil,withPersistentStoreFrom: backupUrl,sourceOptions: nil,ofType: NSSQLiteStoreType)
+                self.moveToMainPage()
+            } catch {
+                self.moveToMainPage()
+            }
+        })
+    }
     func moveToMainPage() {
         DispatchQueue.main.async {
             let initialViewController = UIStoryboard(name: MainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "LoginNavigation")

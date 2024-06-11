@@ -8,7 +8,7 @@
 import UIKit
 import Localize_Swift
 enum SideMenuTitle {
-    case home,besnu,terviVidhi,personDocument,besnuList,terviList,personCardList,deleteData,logOut
+    case home,besnu,terviVidhi,personDocument,besnuList,terviList,personCardList,biographic,restoreData,deleteAccount,logOut
         func selectedString() -> String {
             switch self {
             case .home:
@@ -25,8 +25,12 @@ enum SideMenuTitle {
                 return "Tervi List".localized()
             case .personCardList:
                 return "Person Card List".localized()
-            case .deleteData:
-                return "Delete All Data".localized()
+            case .biographic:
+                return "Biographic".localized()
+            case .restoreData:
+                return "Restore Data from back up".localized()
+            case .deleteAccount:
+                return "Delete Account".localized()
             case .logOut:
                 return "Logout".localized()
             default:

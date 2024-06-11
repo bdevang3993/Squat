@@ -1,7 +1,7 @@
 //
 //  AppDelegate.swift
 //  Squat
-//  More Data
+//
 //  Created by devang bhavsar on 16/02/22.
 //
 
@@ -9,6 +9,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import CoreData
 import AVFoundation
+import FacebookCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -19,6 +20,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
         self.setUpAllData()
+        ApplicationDelegate.shared.application(
+                    application,
+                    didFinishLaunchingWithOptions: launchOptions
+                )
+        do
+                {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                    try AVAudioSession.sharedInstance().setActive(true)
+
+                 //!! IMPORTANT !!
+                 /*
+                 If you're using 3rd party libraries to play sound or generate sound you should
+                 set sample rate manually here.
+                 Otherwise you wont be able to hear any sound when you lock screen
+                 */
+                    //try AVAudioSession.sharedInstance().setPreferredSampleRate(4096)
+                }
+                catch
+                {
+                    print(error)
+                }
+                // This will enable to show nowplaying controls on lock screen
+                application.beginReceivingRemoteControlEvents()
+
         return true
     }
     
@@ -102,7 +127,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    func application(
+           _ app: UIApplication,
+           open url: URL,
+           options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+       ) -> Bool {
+           ApplicationDelegate.shared.application(
+               app,
+               open: url,
+               sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+               annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+           )
+       }
 }
 extension AppDelegate:UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,

@@ -38,7 +38,7 @@
 "Besnu List" = "বেসনু তালিকা";
 "Tervi List" = "তেরো তালিকা";
 "Person Card List" = "ব্যক্তি কার্ড তালিকা";
-"Delete All Data" = "সমস্ত ডেটা মুছুন";
+"Delete Account" = "হিসাব মুছে ফেলা";
 "Logout" = "প্রস্থান";
 //Main
 "Detail" = "বিস্তারিত";
@@ -77,6 +77,7 @@
 "Tervi Description" = "তেরো বর্ণনা";
 "BESNU Description" = "বেসনু বর্ণনা";
 "Proof Display" = "প্রমাণ প্রদর্শন";
+"to take User image" = "ব্যবহারকারী ইমেজ নিতে";
 //Person Info
 "Card" = "কার্ড";
 "Tervi" = "তেরো";
@@ -124,6 +125,21 @@
 "your Image is not saved please try again" = "আপনার ছবি সংরক্ষিত হয়নি অনুগ্রহ করে আবার চেষ্টা করুন";
 //Main
 "please select the person image first" = "প্রথমে ব্যক্তি ইমেজ নির্বাচন করুন";
+//Image Display
+"Biography Description" = "জীবনী বর্ণনা";
+"Image" = "ছবি";
+"Description" = "বর্ণনা";
+"please select the profile image" = "প্রোফাইল ইমেজ নির্বাচন করুন";
+//Bubble Detail
+"Detail" = "বিস্তারিত";
+"please check the data" = "তথ্য চেক করুন";
+//Biographic person
+"Biographic" = "জীবনী";
+"Restore Data from back up" = "ব্যাক আপ থেকে ডেটা পুনরুদ্ধার করুন";
+"Choose Images" = "ছবি নির্বাচন করুন";
+"Select Profile" = "প্রোফাইল নির্বাচন করুন";
+"Person List" = "ব্যক্তি তালিকা";
+
 //Invitation Card
 "You have share Card successfully" = "আপনি সফলভাবে কার্ড শেয়ার করেছেন";
 "please provide customer number more then 10 digit" = "অনুগ্রহ করে 10 সংখ্যার বেশি গ্রাহক নম্বর প্রদান করুন";
@@ -154,5 +170,4 @@
 "tervi information not found" = "তেরো তথ্য পাওয়া যায়নি";
 "Email or Mobile number does not match" = "ইমেল বা মোবাইল নম্বর মেলে না";
 "please select preferable langauge" = "অনুগ্রহ করে পছন্দের ভাষা নির্বাচন করুন";
-"Are you sure you want to delete Database" = "আপনি কি নিশ্চিত আপনি ডাটাবেস মুছে ফেলতে চান";
-
+"Are you sure you want to delete Account" = "আপনি কি নিশ্চিত যে আপনি অ্যাকাউন্ট মুছে ফেলতে চান৷";

@@ -24,7 +24,7 @@ class ProofDisplayViewModel: NSObject {
         headerViewXib!.btnHeader.setTitle("Add".localized(), for: .normal)
         headerViewXib?.btnHeader.addTarget(ProofDisplayViewController(), action: #selector(ProofDisplayViewController.addData), for: .touchUpInside)
         
-        headerViewXib!.lblTitle.text = "Proof Display".localized()
+        headerViewXib!.lblTitle.text = SideMenuTitle.personDocument.selectedString()
         headerView.frame = headerViewXib!.bounds
         headerViewXib!.btnBack.isHidden = false
         headerViewXib!.imgBack.image = UIImage(named: "drawer")

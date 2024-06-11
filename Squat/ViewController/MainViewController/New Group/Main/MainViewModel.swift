@@ -76,7 +76,7 @@ extension MainViewController {
     }
     
     func moveToImage() {
-        let alertController = UIAlertController(title: kAppName, message: kSelectOption.localized(), preferredStyle: .alert)
+        let alertController = UIAlertController(title: kAppName, message: kSelectOption.localized() + " " + "to take User image".localized(), preferredStyle: .alert)
         // Create the actions
         let cameraAction = UIAlertAction(title: "Camera".localized(), style: UIAlertAction.Style.default) {
             UIAlertAction in

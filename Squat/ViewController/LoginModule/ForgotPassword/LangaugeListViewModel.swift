@@ -66,6 +66,7 @@ class LangaugeListViewModel: NSObject {
         strSelectedCode = data.strCode
         strSelectedLanguage = data.strTitle
         self.arrLanguage[index] = data
+//        Localize.setCurrentLanguage(strLanguage)
         self.tblDisplay!.reloadData()
 //        NotificationCenter.default.post(name: Notification.Name(kUpdateLangauge), object: nil,userInfo:nil)
     }

@@ -53,7 +53,7 @@ class AddProofViewController: UIViewController {
         if validate {
             objAddProofViewModel.saveDataInDatabase(viewcontroller: self) { (isSuccess) in
                 if isSuccess {
-                    FileStoragePath.objShared.backupDatabase()
+                    FileStoragePath.objShared.backupDatabase(databaseName: kDatabaseName)
                     self.updatedAllData!()
                     self.dismiss(animated: true, completion: nil)
                 } else {

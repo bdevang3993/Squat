@@ -13,9 +13,9 @@ final class FileStoragePath: NSObject {
     private override init() {
     }
     
-    func backupDatabase(){
+    func backupDatabase(databaseName:String){
         let backUpFolderUrl = FileManager.default.urls(for: .documentDirectory, in:.userDomainMask).first!
-        let backupUrl = backUpFolderUrl.appendingPathComponent(kDatabaseName + ".sqlite")
+        let backupUrl = backUpFolderUrl.appendingPathComponent(databaseName + ".sqlite")
         let container = NSPersistentContainer(name: kPersistanceStorageName)//
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in })
 

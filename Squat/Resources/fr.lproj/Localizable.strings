@@ -38,10 +38,24 @@
 "Besnu List" = "Liste des sièges";
 "Tervi List" = "Liste de Tervi";
 "Person Card List" = "Liste des cartes d'après-demain";
-"Delete All Data" = "Supprimer toutes les données";
+"Delete Account" = "Supprimer le compte";
 "Logout" = "Se déconnecter";
 //Main
 "Om Santi" = "ૐ Paix";
+//Image Display
+"Biography Description" = "Description de la biographie";
+"Image" = "Image";
+"Description" = "La description";
+"please select the profile image" = "veuillez sélectionner l'image du profil";
+//Bubble Detail
+"Detail" = "Détail";
+"please check the data" = "veuillez vérifier les données";
+//Biographic person
+"Biographic" = "Biographique";
+"Restore Data from back up" = "Restaurer les données à partir de la sauvegarde";
+"Choose Images" = "Choisissez des images";
+"Select Profile" = "Choisissez un profil";
+"Person List" = "Liste des personnes";
 //Invitation Card
 "Note: If you want to install this app then download from play store, URL:" = "
 Remarque : Si vous souhaitez l'installer, téléchargez-le depuis Play Store, Rural :";
@@ -77,6 +91,7 @@ Remarque : Si vous souhaitez l'installer, téléchargez-le depuis Play Store, Ru
 "Tervi Description" = "Description de Tervi";
 "BESNU Description" = "Description de Besnou";
 "Proof Display" = "Affichage de la preuve";
+"to take User image" = "pour prendre l'image de l'utilisateur";
 //Person Info
 "Card" = "Carte";
 "Tervi" = "Treize";
@@ -153,5 +168,4 @@ Remarque : Si vous souhaitez l'installer, téléchargez-le depuis Play Store, Ru
 "tervi information not found" = "treize informations introuvables";
 "Email or Mobile number does not match" = "L'email ou le numéro de portable ne correspond pas";
 "please select preferable langauge" = "veuillez sélectionner la langue préférée";
-"Are you sure you want to delete Database" = "Êtes-vous sûr de vouloir supprimer la base de données";
-
+"Are you sure you want to delete Account" = "Êtes-vous sûr de vouloir supprimer le compte";

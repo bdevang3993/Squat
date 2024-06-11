@@ -10,6 +10,7 @@ import Floaty
 import Localize_Swift
 
 class InvitationCardViewController: UIViewController {
+    @IBOutlet weak var lblNoDataFound: UILabel!
     @IBOutlet weak var imgDiya1: UIImageView!
     @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var imgDiya2: UIImageView!
@@ -30,8 +31,10 @@ class InvitationCardViewController: UIViewController {
         // Do any additional setup after loading the view.
         if objInvitationCard.arrIteamList.count > 0 {
             self.tblDisplayData.isHidden = false
+            lblNoDataFound.isHidden = true
         } else {
             self.tblDisplayData.isHidden = true
+            lblNoDataFound.isHidden = false
         }
         self.view.backgroundColor = hexStringToUIColor(hex: strTheamColor)
         self.objInvitationCard.fetchPersonId()
@@ -47,11 +50,14 @@ class InvitationCardViewController: UIViewController {
     
     func setUpCustomField() {
         DispatchQueue.main.async {
+            self.floaty.removeFromSuperview()
+            self.floaty = Floaty()
             self.objInvitationCard.setHeaderView(headerView: self.viewHeader)
             self.configureData()
         }
     }
     func configureData() {
+        lblNoDataFound.text = "No data found".localized()
         if UIDevice.current.userInterfaceIdiom == .pad {
             viewTableHeader.frame = CGRect(x: viewTableHeader.frame.origin.x, y: viewTableHeader.frame.origin.y, width: viewTableHeader.frame.width, height: 400)
             viewTableHeader.layoutIfNeeded()
@@ -71,7 +77,7 @@ class InvitationCardViewController: UIViewController {
         self.objInvitationCard.viewController = self
         let strAppName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         playStoreURL = "https://apps.apple.com/India/app/\(strAppName)/id1611183134"
-        let newDownloadString:String = "Note: If you want to install this app then download from play store, URL:".localized()
+        let newDownloadString:String = "Note: If you want to install this app then download from App Store, URL:".localized()
         let attributedString = NSMutableAttributedString(string: "\(newDownloadString) \(playStoreURL)")
         attributedString.addAttribute(.link, value: playStoreURL, range: NSRange(location: newDownloadString.length + 1, length: playStoreURL.count))
         self.lblNote.attributedText = attributedString
@@ -96,6 +102,10 @@ class InvitationCardViewController: UIViewController {
         objInvitationData.selectedDetail = {[weak self] (detail,familyMember) in
             self?.objInvitationCard.arrIteamList = detail
             self?.objInvitationCard.arrMemberList = familyMember
+            if detail.count > 0 {
+                self?.tblDisplayData.isHidden = false
+                self?.lblNoDataFound.isHidden = true
+            }
 //            self?.objInvitationCard.tableView = self?.tblDisplayData
             if self!.isFromTervi {
                 self?.objInvitationCard.setUpDataForTervi()

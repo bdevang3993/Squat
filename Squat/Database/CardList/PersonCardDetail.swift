@@ -200,6 +200,7 @@ struct PersonCardDetail {
             return false
         }
     }
+    
     func delete(id:Int,success successBlock:@escaping ((Bool) -> Void)) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -219,6 +220,8 @@ struct PersonCardDetail {
             successBlock(false)
         }
     }
+    
+    
     func deleteAllEntryFromDB() -> Bool {
         // Create Fetch Request
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

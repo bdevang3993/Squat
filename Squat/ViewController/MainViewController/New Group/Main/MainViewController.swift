@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-
+import MediaPlayer
 class MainViewController: UIViewController {
     @IBOutlet weak var imgFlowerShow: UIImageView!
     @IBOutlet weak var viewHeader: UIView!
@@ -190,6 +190,7 @@ class MainViewController: UIViewController {
     @IBAction func btnStartClicked(_ sender: Any) {
         let url = Bundle.main.url(forResource: self.objMainViewModel.arrMP3FileList[mp3Index], withExtension: "mp3")!
         self.lblSongTitle.text = self.objMainViewModel.arrMP3FileList[mp3Index]
+//        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
         let playerItem:AVPlayerItem = AVPlayerItem(url: url)
         player = AVPlayer(playerItem: playerItem)
         if player?.rate == 0 {

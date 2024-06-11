@@ -111,7 +111,37 @@ struct UserInfoDetailQuery {
           }
     }
     
-    
+    mutating func fetchDataByEmail(emailId:String,record recordBlock: @escaping (([String:Any]) -> Void),failure failureBlock:@escaping ((Bool) -> Void)) {
+        var dicData = [String:Any]()
+          //1
+          guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            failureBlock(false)
+            return
+          }
+          
+          let managedContext =
+            appDelegate.persistentContainer.viewContext
+          
+          //2
+          let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "UserInfo")
+            fetchRequest.predicate = NSPredicate(format: "emailId = %@",argumentArray:[emailId])
+
+          //3
+          do {
+            people = try managedContext.fetch(fetchRequest)
+            if people.count > 0 {
+                let array = FileStoragePath.objShared.convertToJSONArray(moArray: people)//convertToJSONArray(moArray: people)
+                dicData = array[0]
+                recordBlock(dicData)
+            } else {
+                return failureBlock(false)
+            }
+          } catch _ as NSError {
+            return failureBlock(false)
+          }
+    }
     
     func updateDataBase(strName:String,strAddress:String,strEmailId:String,strMobileNumber:String,photo:Data) -> Bool {
         

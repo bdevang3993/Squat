@@ -38,11 +38,27 @@
 "Besnu List" = "Список Бесну";
 "Tervi List" = "Терви Лист";
 "Person Card List" = "Список карточек людей";
-"Delete All Data" = "Удалить все данные";
+"Delete Account" = "Удалить аккаунт";
 "Logout" = "Выйти";
 //Main
 "Detail" = "подробности";
 "Om Santi" = "Ом Санти";
+
+//Image Display
+"Biography Description" = "Биография Описание";
+"Image" = "Изображение";
+"Description" = "Описание";
+"please select the profile image" = "Пожалуйста, выберите изображение профиля";
+//Bubble Detail
+"Detail" = "Деталь";
+"please check the data" = "пожалуйста, проверьте данные";
+//Biographic person
+"Biographic" = "Биографический";
+"Restore Data from back up" = "Восстановить данные из резервной копии";
+"Choose Images" = "Выберите изображения";
+"Select Profile" = "Выберите профиль";
+"Person List" = "Список лиц";
+
 //Invitation Card
 "Note: If you want to install this app then download from play store, URL:" = "Примечание. Если вы хотите установить это приложение, загрузите его из игрового магазина, URL:";
 "Add" = "Добавлять";
@@ -77,6 +93,7 @@
 "Tervi Description" = "Терви Описание";
 "BESNU Description" = "Описание БЭСНУ";
 "Proof Display" = "Пробный дисплей";
+"to take User image" = "взять изображение пользователя";
 //Person Info
 "Card" = "Карта";
 "Tervi" = "Терви";
@@ -154,4 +171,4 @@
 "tervi information not found" = "терви информация не найдена";
 "Email or Mobile number does not match" = "Электронная почта или номер мобильного телефона не совпадают";
 "please select preferable langauge" = "пожалуйста, выберите предпочтительный язык";
-"Are you sure you want to delete Database" = "Вы уверены, что хотите удалить базу данных";
+"Are you sure you want to delete Account" = "Вы уверены, что хотите удалить Аккаунт";

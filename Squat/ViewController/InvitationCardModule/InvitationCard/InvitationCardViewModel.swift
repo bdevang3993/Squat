@@ -254,10 +254,12 @@ class InvitationCardViewModel: NSObject {
                            else {
                    // handle no location found
                 MBProgressHub.dismissLoadingSpinner(self.viewController!.view)
+                print("Error = \(error?.localizedDescription)")
                    return
                }
             self.latitude = location.coordinate.latitude
             self.longitude = location.coordinate.longitude
+            print("from function Latitude  = \(self.latitude) and longitude = \(self.longitude)")
             MBProgressHub.dismissLoadingSpinner(self.viewController!.view)
                // Use your location
            }
@@ -333,15 +335,19 @@ extension InvitationCardViewController {
         var urlData:URL?
         var urlData2:URL?
         var urlData3:URL?
-        urlData = URL(string: "https://maps.apple.com/?daddr=\(objInvitationCard.latitude),\(objInvitationCard.longitude)")
         
-        urlData2 = URL(string: "https://maps.google.com/maps?daddr=\(objInvitationCard.latitude),\(objInvitationCard.longitude)")
+        if strSelectedLocal == "en" {
+            urlData = URL(string: "https://maps.apple.com/?daddr=\(objInvitationCard.latitude),\(objInvitationCard.longitude)")
+            
+            urlData2 = URL(string: "https://maps.google.com/maps?daddr=\(objInvitationCard.latitude),\(objInvitationCard.longitude)")
+        }
+   
         
         urlData3 = URL(string: playStoreURL)
         if urlData != nil && urlData2 != nil {
             imageShare = [image,urlData!,urlData2!,urlData3!]
         } else {
-            imageShare = [image]
+            imageShare = [image,urlData3!]
         }
         
         //let imageShare = [image]

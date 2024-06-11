@@ -38,7 +38,7 @@
 "Besnu List" = "ബെസ്നു ലിസ്റ്റ്";
 "Tervi List" = "പതിമൂന്ന് ലിസ്റ്റ്";
 "Person Card List" = "വ്യക്തി കാർഡ് ലിസ്റ്റ്";
-"Delete All Data" = "എല്ലാ ഡാറ്റയും ഇല്ലാതാക്കുക";
+"Delete Account" = "അക്കൗണ്ട് ഇല്ലാതാക്കുക";
 "Logout" = "പുറത്തുകടക്കുക";
 //Main
 "Detail" = "വിശദാംശങ്ങൾ";
@@ -77,6 +77,7 @@
 "Tervi Description" = "പതിമൂന്ന് വിവരണം";
 "BESNU Description" = "ബെസ്നു വിവരണം";
 "Proof Display" = "തെളിവ് ഡിസ്പ്ലേ";
+"to take User image" = "ഉപയോക്തൃ ചിത്രം എടുക്കാൻ";
 //Person Info
 "Card" = "കാർഡ്";
 "Tervi" = "പതിമൂന്ന്";
@@ -124,6 +125,21 @@
 "your Image is not saved please try again" = "നിങ്ങളുടെ ചിത്രം സംരക്ഷിച്ചിട്ടില്ല, ദയവായി വീണ്ടും ശ്രമിക്കുക";
 //Main
 "please select the person image first" = "ദയവായി ആദ്യം വ്യക്തിയുടെ ചിത്രം തിരഞ്ഞെടുക്കുക";
+//Image Display
+"Biography Description" = "ജീവചരിത്ര വിവരണം";
+"Image" = "ചിത്രം";
+"Description" = "വിവരണം";
+"please select the profile image" = "പ്രൊഫൈൽ ചിത്രം തിരഞ്ഞെടുക്കുക";
+//Bubble Detail
+"Detail" = "വിശദാംശങ്ങൾ";
+"please check the data" = "ദയവായി ഡാറ്റ പരിശോധിക്കുക";
+//Biographic person
+"Biographic" = "ജീവചരിത്രം";
+"Restore Data from back up" = "ബാക്കപ്പിൽ നിന്ന് ഡാറ്റ പുനഃസ്ഥാപിക്കുക";
+"Choose Images" = "ചിത്രങ്ങൾ തിരഞ്ഞെടുക്കുക";
+"Select Profile" = "പ്രൊഫൈൽ തിരഞ്ഞെടുക്കുക";
+"Person List" = "വ്യക്തി ലിസ്റ്റ്";
+
 //Invitation Card
 "You have share Card successfully" = "നിങ്ങൾക്ക് വിജയകരമായി കാർഡ് പങ്കിട്ടു";
 "please provide customer number more then 10 digit" = "10 അക്കത്തിൽ കൂടുതൽ ഉപഭോക്തൃ നമ്പർ നൽകുക";
@@ -154,4 +170,4 @@
 "tervi information not found" = "പതിമൂന്ന് വിവരങ്ങൾ കണ്ടെത്തിയില്ല";
 "Email or Mobile number does not match" = "ഇമെയിലോ മൊബൈൽ നമ്പറോ പൊരുത്തപ്പെടുന്നില്ല";
 "please select preferable langauge" = "ദയവായി അഭിലഷണീയമായ ഭാഷ തിരഞ്ഞെടുക്കുക";
-"Are you sure you want to delete Database" = "നിങ്ങൾക്ക് ഡാറ്റാബേസ് ഇല്ലാതാക്കണമെന്ന് തീർച്ചയാണോ";
+"Are you sure you want to delete Account" = "അക്കൗണ്ട് ഇല്ലാതാക്കണമെന്ന് തീർച്ചയാണോ";

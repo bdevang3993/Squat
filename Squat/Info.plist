@@ -23,11 +23,32 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1307818666392235</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>1307818666392235</string>
+	<key>FacebookClientToken</key>
+	<string>EAASldEMKeqsBAO5qRZAbXet7dGuYqwnyRLgXsZCa8i7CzhWB6XE8iDrGasK8W69B7x4eXewb1wiodpDcwqsFZAYm8YvSZBclZBajz11FetJusZBV16Tx6qvYgfZA1oUFyHcBcqLSUQyEB9uQgq1dzdOYBQJwAHSPkGm3TC080CBLZC33S16bRYy8fjXCdLy2a475lS51M1zTVz8IxlH8XDrF</string>
+	<key>FacebookDisplayName</key>
+	<string>Squat_RIP</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAllowsArbitraryLoadsForMedia</key>
@@ -38,11 +59,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app required acess of camera to take selfy</string>
+	<string>This app required acess of camera to take picture of the person</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Login using Face Id</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to the photo library</string>
+	<string>This app requires access to the photo library to acccess photo of person</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

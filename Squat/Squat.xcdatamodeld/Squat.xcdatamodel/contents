@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BioGraphy" representedClassName="BioGraphy" syncable="YES">
+        <attribute name="personDescription" optional="YES" attributeType="String"/>
+        <attribute name="personId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="personImage" optional="YES" attributeType="String"/>
+        <attribute name="personName" optional="YES" attributeType="String"/>
+        <attribute name="personPlaceName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ImagesOfBioGraphy" representedClassName="ImagesOfBioGraphy" syncable="YES">
+        <attribute name="imageId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="personId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="placeName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="PersonCardImage" representedClassName="PersonCardImage" syncable="YES">
         <attribute name="besnuCard" optional="YES" attributeType="String"/>
         <attribute name="personId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -63,6 +76,8 @@
         <attribute name="photo" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
+        <element name="BioGraphy" positionX="-27" positionY="135" width="128" height="104"/>
+        <element name="ImagesOfBioGraphy" positionX="-18" positionY="144" width="128" height="89"/>
         <element name="PersonCardImage" positionX="-27" positionY="117" width="128" height="89"/>
         <element name="PersonFamilyData" positionX="0" positionY="153" width="128" height="89"/>
         <element name="PersonInfo" positionX="-54" positionY="18" width="128" height="239"/>

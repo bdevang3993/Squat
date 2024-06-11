@@ -38,7 +38,7 @@
 "Besnu List" = "Besnu List";
 "Tervi List" = "Tervi List";
 "Person Card List" = "Person Card List";
-"Delete All Data" = "Delete All Data";
+"Delete Account" = "Delete Account";
 "Logout" = "Logout";
 //Main
 "Detail" = "Detail";
@@ -78,6 +78,7 @@
 "Tervi Description" = "Tervi Description";
 "BESNU Description" = "BESNU Description";
 "Proof Display" = "Proof Display";
+"to take User image" = "to take User image";
 //Person Info
 "Card" = "Card";
 "Tervi" = "Tervi";
@@ -119,12 +120,28 @@
 "Song Name" = "Song Name";
 "No data found" = "No data found";
 "SUBMIT" = "SUBMIT";
+
+"Biographic" = "Biographic";
 //Alert Messages
 "please select one option" = "please select one option";
 "please select your profie image" = "please select your profie image";
 "your Image is not saved please try again" = "your Image is not saved please try again";
 //Main
 "please select the person image first" = "please select the person image first";
+//Image Display
+"Biography Description" = "Biography Description";
+"Image" = "Image";
+"Description" = "Description";
+"please select the profile image" = "please select the profile image";
+//Bubble Detail
+"Detail" = "Detail";
+"please check the data" = "please check the data";
+//Biographic person
+"Biographic" = "Biographic";
+"Restore Data from back up" = "Restore Data from back up";
+"Choose Images" = "Choose Images";
+"Select Profile" = "Select Profile";
+"Person List" = "Person List";
 //Invitation Card
 "You have share Card successfully" = "You have share Card successfully";
 "please provide customer number more then 10 digit" = "please provide customer number more then 10 digit";
@@ -155,5 +172,5 @@
 "tervi information not found" = "tervi information not found";
 "Email or Mobile number does not match" = "Email or Mobile number does not match";
 "please select preferable langauge" = "please select preferable langauge";
-"Are you sure you want to delete Database" = "Are you sure you want to delete Database";
+"Are you sure you want to delete Account" = "Are you sure you want to delete Account";
 

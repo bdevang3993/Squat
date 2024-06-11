@@ -12,6 +12,7 @@ final class DocumentDirectoryAccess: NSObject {
     static var objShared = DocumentDirectoryAccess()
     private override init() {
     }
+    
     func saveImageDocumentDirectory(name:String,imageData:Data){
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("ImageList/\(name)")
@@ -19,6 +20,12 @@ final class DocumentDirectoryAccess: NSObject {
         print(paths)
         let imageData = image!.pngData()
         fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    func saveDirectImageDocumentDirectory(name:String,image:UIImage,success successBlock:@escaping(Bool) -> Void){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("ImageList/\(name)")
+        let imageData = image.pngData()
+        successBlock(fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil))
     }
     func getDirectoryPath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -43,7 +50,8 @@ final class DocumentDirectoryAccess: NSObject {
         let imagePAth = (self.getDirectoryPath() as NSString).appendingPathComponent("ImageList/\(name)")
         if fileManager.fileExists(atPath: imagePAth){
             do {
-                try fileManager.removeItem(at: URL(string: imagePAth)!)
+                try fileManager.removeItem(atPath: imagePAth)
+                //try fileManager.removeItem(at: URL(string: imagePAth)!)
             }
             catch {
                 successBlock(false)

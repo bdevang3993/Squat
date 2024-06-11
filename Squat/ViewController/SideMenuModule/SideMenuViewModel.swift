@@ -18,7 +18,9 @@ class SideMenuViewModel: NSObject {
         arrDescription.append(SideMenuTitle.besnuList.selectedString())
         arrDescription.append(SideMenuTitle.terviList.selectedString())
         arrDescription.append(SideMenuTitle.personCardList.selectedString())
-        arrDescription.append(SideMenuTitle.deleteData.selectedString())
+        arrDescription.append(SideMenuTitle.biographic.selectedString())
+        arrDescription.append(SideMenuTitle.restoreData.selectedString())
+        arrDescription.append(SideMenuTitle.deleteAccount.selectedString())
         arrDescription.append(SideMenuTitle.logOut.selectedString())
     }
 }
@@ -73,14 +75,24 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource {
             let objProofDisplayViewController:ProofDisplayViewController = UIStoryboard(name: InvitationStoryBoard, bundle: nil).instantiateViewController(identifier: "ProofDisplayViewController") as! ProofDisplayViewController
             self.revealViewController()?.pushFrontViewController(objProofDisplayViewController, animated: true)
         }
-        else if strTitle == SideMenuTitle.deleteData.selectedString() {
-            setAlertWithCustomAction(viewController: self, message: "Are you sure you want to delete Database".localized() + "?", ok: { (isSucccess) in
-                self.deleteDB()
+        else if strTitle == SideMenuTitle.biographic.selectedString() {
+            let objzBiogrphyViewController:BioGraphyDisplayViewController = UIStoryboard(name: BiographyStoryBoard, bundle: nil).instantiateViewController(identifier: "BioGraphyDisplayViewController") as! BioGraphyDisplayViewController
+            self.revealViewController()?.pushFrontViewController(objzBiogrphyViewController, animated: true)
+        }
+        else if strTitle == SideMenuTitle.restoreData.selectedString() {
+            setAlertWithCustomAction(viewController: self, message: "Are you sure you want to take back up from icloude".localized() + "?", ok: { (isSuccess) in
+                self.deleteDB(isDelete: false)
+            }, isCancel: true) { (isFalied) in
+            }
+        }
+        else if strTitle == SideMenuTitle.deleteAccount.selectedString() {
+            setAlertWithCustomAction(viewController: self, message: "Are you sure you want to delete Account".localized() + " " + "?", ok: { (isSucccess) in
+                self.deleteDB(isDelete: true)
             }, isCancel: true) { (isFailed) in
             }
         }
         else {
-            setAlertWithCustomAction(viewController: self, message: "Are you sure you want to Logout".localized() + "?", ok: { (isSucces) in
+            setAlertWithCustomAction(viewController: self, message: "Are you sure you want to Logout".localized() + " " + "?", ok: { (isSucces) in
                 self.moveToMainPage()
             }, isCancel: true) { (isTrue) in
                 
@@ -92,9 +104,10 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource {
         let initialViewController = UIStoryboard(name: MainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: "LoginNavigation")
         self.view.window?.rootViewController = initialViewController
     }
-    func deleteDB() {
+    func deleteDB(isDelete:Bool) {
         let viewController = UIStoryboard(name:InvitationStoryBoard , bundle: nil).instantiateViewController(identifier: "LoaderNavigation")
-            isFromDelete = true
+            isFromDelete = isDelete
+            isFromSideMenu = true
         self.view.window?.rootViewController = viewController
     }
 }
